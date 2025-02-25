@@ -28,7 +28,7 @@ export default function Timer() {
 
   return (
     <>
-      <div className="text-center text-white text-4xl font-bold">
+      <div className="text-center bg-slate-300 text-4xl font-bold my-4 px-32 rounded">
         {formatTime(time)}
       </div>
       <div className="flex justify-center space-x-4">
