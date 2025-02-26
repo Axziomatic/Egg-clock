@@ -1,20 +1,31 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-export default function Timer() {
-  const [time, setTime] = useState(0);
-  const [isRunning, setIsRunning] = useState(false);
+interface TimerProps {
+  time: number;
+  setTime: React.Dispatch<React.SetStateAction<number>>;
+  isRunning: boolean;
+  setIsRunning: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
+export default function Timer({
+  time,
+  setTime,
+  isRunning,
+  setIsRunning,
+}: TimerProps) {
   useEffect(() => {
     let timer: number;
 
-    if (isRunning) {
+    if (isRunning && time > 0) {
       timer = setInterval(() => {
-        setTime((prevTime) => prevTime + 1);
+        setTime((prevTime) => prevTime - 1);
       }, 10);
+    } else if (time <= 0) {
+      setIsRunning(false);
     }
 
     return () => clearInterval(timer);
-  }, [isRunning]);
+  }, [isRunning, time, setTime, setIsRunning]);
 
   const formatTime = (hundredths: number) => {
     const totalSeconds = Math.floor(hundredths / 100); // Totala sekunder
