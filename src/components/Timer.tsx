@@ -39,24 +39,24 @@ export default function Timer({
 
   return (
     <>
-      <div className="text-center bg-slate-300 text-4xl font-bold my-4 px-32 rounded">
+      <div className="text-center bg-yellow-50 text-4xl font-bold my-4 px-32 rounded">
         {formatTime(time)}
       </div>
       <div className="flex justify-center space-x-4">
         <button
-          className="py-2 px-4 bg-green-500 rounded hover:bg-green-600"
+          className="py-2 px-4 bg-green-300 rounded border hover:bg-green-400"
           onClick={() => setIsRunning(true)}
         >
           Start
         </button>
         <button
-          className="py-2 px-4 bg-red-500 rounded hover:bg-red-600"
+          className="py-2 px-4 bg-red-300 rounded border hover:bg-red-400"
           onClick={() => setIsRunning(false)}
         >
           Stop
         </button>
         <button
-          className="py-2 px-4 bg-yellow-500 rounded hover:bg-yellow-600"
+          className="py-2 px-4 bg-yellow-200 rounded border hover:bg-yellow-300"
           onClick={() => {
             setIsRunning(false);
             setTime(0);
