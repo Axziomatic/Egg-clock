@@ -17,6 +17,11 @@ export default function Header() {
             Recipes
           </button>
         </Link>
+        <Link to="/fav">
+          <button className="py-2 p-4 rounded-b-md bg-purple-200 text-l slate-700 hover:bg-purple-400">
+            Favourites
+          </button>
+        </Link>
       </div>
     </>
   );
